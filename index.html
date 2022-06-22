@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Building a clone of the Spotify homepage">
+    <meta name="author" content="Crystal Koo">
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Montserrat:wght@500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.6.96/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Spotify Clone</title>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="banner">
+            <img class="logo" src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png"
+                alt="Spotify Logo">
+        </div>
+
+        <div class="menu-items">
+            <div class="home">
+                <span class="mdi mdi-home-variant mdi-24px"></span>
+                <a href="#">Home</a>
+            </div>
+
+            <div class="search">
+                <span class="mdi mdi-magnify mdi-24px"></span>
+                <a href="#">Search</a>
+            </div>
+
+            <div class="library">
+                <span class="mdi mdi-music-box-multiple mdi-24px"></span>
+                <a href="#">Your Library</a>
+            </div>
+        </div>
+
+        <div class="menu-items">
+            <div class="playlist-creator">
+                <span class="mdi mdi-plus-box mdi-24px"></span>
+                <a href="#">Create Playlist</a>
+            </div>
+
+            <div class="favourite">
+                <span class="mdi mdi-heart-box mdi-24px"></span>
+                <a href="#">Liked Songs</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="#">Cookies</a>
+            <a href="#">Privacy</a>
+        </div>
+    </aside>
+
+    <nav>
+        <div class="chevrons">
+            <span class="mdi mdi-chevron-left mdi-36px"></span>
+            <span class="mdi mdi-chevron-right mdi-36px"></span>
+        </div>
+
+        <div class="registration">
+            <button class="sign-up">Sign up</button>
+            <button class="login">Log In</button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="new-releases">
+            <h1 class="title">New Releases</h1>
+            <h3 class="subtitle">New realeases from Spotify</h3>
+            <div class="playlist-wrapper"></div>
+        </section>
+
+        <section class="featured-songs">
+            <h1 class="title">Featured Albums</h1>
+            <h3 class="subtitle">Featured playlist from Spotify</h3>
+            <div class="playlist-wrapper"></div>
+        </section>
+
+        <section class="random-songs">
+            <h1 class="title">Random Songs</h1>
+            <h3 class="subtitle">Random playlist from Spotify</h3>
+            <div class="playlist-wrapper"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
