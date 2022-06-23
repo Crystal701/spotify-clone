@@ -8,7 +8,7 @@ function authorize() {
         response: "?response_type=token",
         client: "&client_id=" + encodeURIComponent(clientID),
         scopes: "&scope=" + encodeURIComponent(scope),
-        redirect: "&redirect_uri=" + encodeURIComponent(redirectURI),
+        redirect: "&redirect_uri=" + redirectURI,
     }
 
     const { response, client, scopes, redirect } = params;
