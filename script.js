@@ -34,7 +34,7 @@ function extractToken() {
 window.addEventListener("load", () => {
     TOKEN = extractToken();
 
-    if (TOKEN) {
+    if (TOKEN || TOKEN === "expired") {
         fetchNewRealeases();
         fetchFeaturedPlaylists();
         fetchRandomSongs();
@@ -52,10 +52,9 @@ async function fetchNewRealeases() {
             }
         }
 
-        const request = await fetch("https://api.spotify.com/v1/browse/new-releases?limit=5", params);
-        const data = await request.json();
+        const request = await axios.get("https://api.spotify.com/v1/browse/new-releases?limit=5", params);
 
-        const tracks = data.albums.items;
+        const tracks = request.data.albums.items;
 
         for (let items of tracks) {
             const image = items.images[1].url;
@@ -80,10 +79,9 @@ async function fetchFeaturedPlaylists() {
             }
         }
 
-        const request = await fetch("https://api.spotify.com/v1/browse/featured-playlists?limit=5", params);
-        const data = await request.json();
+        const request = await axios.get("https://api.spotify.com/v1/browse/featured-playlists?limit=5", params);
 
-        const tracks = data.playlists.items;
+        const tracks = request.data.playlists.items;
 
         for (let items of tracks) {
             const image = items.images[0].url;
@@ -108,10 +106,9 @@ async function fetchRandomSongs() {
             }
         }
 
-        const request = await fetch("https://api.spotify.com/v1/search?q=a&type=track&limit=5", params);
-        const data = await request.json();
+        const request = await axios.get("https://api.spotify.com/v1/search?q=a&type=track&limit=5", params);
 
-        const tracks = data.tracks.items;
+        const tracks = request.data.tracks.items;
 
         for (let items of tracks) {
             const image = items.album.images[1].url;
