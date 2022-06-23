@@ -1,6 +1,6 @@
 let TOKEN;
 const clientID = "d99e62ec61cf40769714bb2076eb1cf1";
-const redirectURI = "http://localhost:8888/callback";
+const redirectURI = window.location.origin;
 const scope = "user-read-private user-read-email user-top-read";
 
 function authorize() {
@@ -8,7 +8,7 @@ function authorize() {
         response: "?response_type=token",
         client: "&client_id=" + encodeURIComponent(clientID),
         scopes: "&scope=" + encodeURIComponent(scope),
-        redirect: "&redirect_uri=" + redirectURI,
+        redirect: "&redirect_uri=" + encodeURIComponent(redirectURI),
     }
 
     const { response, client, scopes, redirect } = params;
