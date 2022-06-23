@@ -1,0 +1,62 @@
+@media(max-width: 1250px) {
+    .playlist-wrapper {
+        grid-template-areas: "card card card card";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .song-card:nth-of-type(5) {
+        display: none;
+    }
+}
+
+@media(max-width: 1000px) {
+    .playlist-wrapper {
+        grid-template-areas: "card card card";
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .song-card:nth-of-type(4) {
+        display: none;
+    }
+}
+
+@media(max-width: 800px) {
+    .playlist-wrapper {
+        grid-template-areas: "card card";
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+
+    .song-card {
+        padding: 0.8rem;
+    }
+
+    .song-card:nth-of-type(3) {
+        display: none;
+    }
+}
+
+@media(max-width: 650px) {
+    .playlist-wrapper {
+        grid-template-areas: "card card card card card";
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .song-card:nth-of-type(5),
+    .song-card:nth-of-type(4),
+    .song-card:nth-of-type(3) {
+        display: block;
+    }
+
+    .song-card {
+        min-width: 200px;
+        padding: 1rem;
+    }
+
+    .mdi-chevron-right,
+    .login,
+    .sign-up {
+        display: none;
+    }
+}
