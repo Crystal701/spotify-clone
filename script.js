@@ -1,8 +1,9 @@
 let TOKEN;
 const clientID = "d99e62ec61cf40769714bb2076eb1cf1";
 const redirectURI = `${window.location.origin}/spotify-clone/`;
+console.log(redirectURI);
 const scope = "user-read-private user-read-email user-top-read";
- 
+
 function authorize() {
     const params = {
         response: "?response_type=token",
@@ -39,7 +40,7 @@ window.addEventListener("load", () => {
         fetchFeaturedPlaylists();
         fetchRandomSongs();
     } else {
-        authorize();
+//         authorize();
     }
 })
 
