@@ -2,7 +2,7 @@ let TOKEN;
 const clientID = "d99e62ec61cf40769714bb2076eb1cf1";
 const redirectURI = "https://crystal701.github.io/spotify-clone/";
 const scope = "user-read-private user-read-email user-top-read";
- 
+
 function authorize() {
     const params = {
         response: "?response_type=token",
