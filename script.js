@@ -1,23 +1,23 @@
 let TOKEN;
 const clientID = "d99e62ec61cf40769714bb2076eb1cf1";
-const redirectURI = window.location.origin;
+const redirectURI = `${window.location.origin}/https://crystal701.github.io/spotify-clone/`;
 console.log(redirectURI);
 const scope = "user-read-private user-read-email user-top-read";
 
-// function authorize() {
-//     const params = {
-//         response: "?response_type=token",
-//         client: "&client_id=" + encodeURIComponent(clientID),
-//         scopes: "&scope=" + encodeURIComponent(scope),
-//         redirect: "&redirect_uri=" + encodeURIComponent(redirectURI),
-//     }
+function authorize() {
+    const params = {
+        response: "?response_type=token",
+        client: "&client_id=" + encodeURIComponent(clientID),
+        scopes: "&scope=" + encodeURIComponent(scope),
+        redirect: "&redirect_uri=" + encodeURIComponent(redirectURI),
+    }
 
-//     const { response, client, scopes, redirect } = params;
+    const { response, client, scopes, redirect } = params;
 
-//     const url = `http://accounts.spotify.com/authorize${response}${client}${scopes}${redirect}`;
+    const url = `http://accounts.spotify.com/authorize${response}${client}${scopes}${redirect}`;
 
-//     window.open(url, "_self");
-// }
+    window.open(url, "_self");
+}
 
 function extractToken() {
     const hash = window.location.hash;
@@ -40,7 +40,7 @@ window.addEventListener("load", () => {
         fetchFeaturedPlaylists();
         fetchRandomSongs();
     } else {
-//         authorize();
+        authorize();
     }
 })
 
